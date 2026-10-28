@@ -462,3 +462,11 @@ body:has(.pop:not([hidden])) .tg-float{display:none}
 .pics--badik{align-items:flex-end}
 .pics--badik img{box-shadow:0 4px 14px rgba(0,0,0,.12)}
 .content .pics img[src*="badik_"]{border-radius:14px}
+/* mobile: cards stack on scroll, like the case list */
+@media (max-width:760px){
+  .steps,.svc-grid,.why-grid,.team-grid,.who-grid{display:block}
+  .steps li,.svc-grid .tile,.why-grid .wcard,.team-grid .tm,.who-grid .who{position:sticky;top:calc(12px + var(--i, 0) * 12px);margin-bottom:5vh;box-shadow:0 -10px 24px -14px rgba(18,34,45,.45)}
+  .steps li:first-child,.svc-grid .tile:first-child,.why-grid .wcard:first-child,.team-grid .tm:first-child,.who-grid .who:first-child{box-shadow:none}
+  .steps li:last-child,.svc-grid .tile:last-child,.why-grid .wcard:last-child,.team-grid .tm:last-child,.who-grid .who:last-child{margin-bottom:0}
+  .svc-grid .tile{background:var(--bg)}
+}
