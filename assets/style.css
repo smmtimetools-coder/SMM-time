@@ -458,3 +458,7 @@ body:has(.pop:not([hidden])) .tg-float{display:none}
 .reviews::-webkit-scrollbar{height:6px}
 .reviews::-webkit-scrollbar-thumb{background:var(--ink);border-radius:99px}
 .reviews::-webkit-scrollbar-track{background:transparent}
+
+.pics--badik{align-items:flex-end}
+.pics--badik img{box-shadow:0 4px 14px rgba(0,0,0,.12)}
+.content .pics img[src*="badik_"]{border-radius:14px}
