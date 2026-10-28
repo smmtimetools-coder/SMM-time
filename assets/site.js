@@ -169,6 +169,8 @@
     ok.querySelector('.ok-back').addEventListener('click',function(){ok.hidden=true;form.hidden=false});
   }
   document.querySelectorAll('.lead-form').forEach(wire);
+  /* stacking order for mobile sticky cards */
+  ['.svc-grid'].forEach(function(sel){document.querySelectorAll(sel).forEach(function(g){[].forEach.call(g.children,function(c,i){c.style.setProperty('--i',i)})})});
   document.querySelectorAll('[data-reviews]').forEach(function(r){var nav=r.nextElementSibling;if(!nav)return;nav.addEventListener('click',function(e){var b=e.target.closest('[data-rev]');if(!b)return;var c=r.querySelector('.rev');var step=c?c.getBoundingClientRect().width+parseFloat(getComputedStyle(r).columnGap||0):r.clientWidth;r.scrollBy({left:step*+b.dataset.rev,behavior:'smooth'})})});
 
   /* pop-up */

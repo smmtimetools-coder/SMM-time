@@ -462,3 +462,10 @@ body:has(.pop:not([hidden])) .tg-float{display:none}
 .pics--badik{align-items:flex-end}
 .pics--badik img{box-shadow:0 4px 14px rgba(0,0,0,.12)}
 .content .pics img[src*="badik_"]{border-radius:14px}
+/* mobile: service tiles stack on scroll, like the case list */
+@media (max-width:760px){
+  .svc-grid{display:block}
+  .svc-grid .tile{position:sticky;top:calc(12px + var(--i, 0) * 12px);margin-bottom:5vh;background:var(--bg);box-shadow:0 -10px 24px -14px rgba(18,34,45,.45)}
+  .svc-grid .tile:first-child{box-shadow:none}
+  .svc-grid .tile:last-child{margin-bottom:0}
+}
