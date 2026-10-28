@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /404.html
 
-Sitemap: https://smmtimetools-coder.github.io/SMM-time/sitemap.xml
+Sitemap: https://smm-time.com/sitemap.xml
