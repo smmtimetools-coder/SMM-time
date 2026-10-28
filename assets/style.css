@@ -196,7 +196,6 @@ a.tile:hover img{filter:brightness(1.08) saturate(1.08)}
 .pack li{display:grid;grid-template-columns:max(26px, calc(56 * var(--u))) 1fr;gap:max(10px, calc(24 * var(--u)));align-items:start}
 .pack li img{width:100%;margin-top:calc(-6 * var(--u))}
 .pack .cost{margin-top:auto;background:var(--ink);color:var(--paper);border-radius:20px;min-height:max(52px, calc(92 * var(--u)));display:grid;place-items:center;font-weight:700;font-size:var(--f-body);text-transform:uppercase;margin:auto -2px -2px}
-.pack--b .cost{background:var(--ink2)}
 .note{font-size:var(--f-small);color:#4d575d;margin-top:max(4px, calc(10 * var(--u)))}
 
 /* contacts */
