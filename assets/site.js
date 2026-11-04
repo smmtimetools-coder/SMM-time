@@ -62,7 +62,7 @@
       return '<a class="tile'+(wide?' tile--wide':'')+'" href="'+url(id)+'"><img src="'+ROOT+'img/'+img+'.webp" alt="" style="object-position:'+(pos||'50% 50%')+'"><svg class="frame" aria-hidden="true"><path/></svg><span class="lbl">'+label+'</span></a>';
     }
     function mascotTile(){
-      return '<a class="tile tile--ai" href="'+url('mascot')+'"><span class="ai-bg"></span><span class="ai-mark" aria-hidden="true">AI</span><span class="ai-list" aria-hidden="true">концепт · пози · емоції · анімація</span><svg class="frame" aria-hidden="true"><path/></svg><span class="lbl">AI-персонажі (маскот)<span class="soon">нове</span></span></a>';
+      return '<a class="tile tile--ai" href="'+url('mascot')+'"><span class="ai-bg"></span><img class="ai-mascot" src="'+ROOT+'img/mascot_lesia.webp" alt="" aria-hidden="true"><span class="ai-list" aria-hidden="true">концепт · пози · емоції · анімація</span><svg class="frame" aria-hidden="true"><path/></svg><span class="lbl">AI-персонажі (маскот)<span class="soon">нове</span></span></a>';
     }
     return '<div class="svc-grid">'+tile('smm','svcp_smm','комплексний smm з AI',false,'50% 62%')+tile('target','svcp_target','таргетована реклама з AI',false,'50% 45%')+
       mascotTile()+tile('audit','svcp_audit','AI-аудит соцмереж',false,'50% 48%')+
