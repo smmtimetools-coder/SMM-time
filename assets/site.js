@@ -174,6 +174,10 @@
     g.classList.add('js-reveal');var cols=function(){return getComputedStyle(g).gridTemplateColumns.split(' ').length};
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var c=e.target,i=[].indexOf.call(g.children,c);c.style.setProperty('--d',i%cols());c.classList.add('in');io.unobserve(c)})},{threshold:.2});
     [].forEach.call(g.children,function(c){io.observe(c)})})();
+  /* comparison rows: SMM TIME side slides in as each row enters the screen */
+  (function(){var v=document.querySelector('.vs');if(!v||!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+    v.classList.add('js-reveal');var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.4});
+    v.querySelectorAll('.vs-row:not(.vs-head) p+p').forEach(function(p){io.observe(p)})})();
   /* stacking order for mobile sticky cards */
   ['.svc-grid'].forEach(function(sel){document.querySelectorAll(sel).forEach(function(g){[].forEach.call(g.children,function(c,i){c.style.setProperty('--i',i)})})});
   document.querySelectorAll('[data-reviews]').forEach(function(r){var nav=r.nextElementSibling;if(!nav)return;nav.addEventListener('click',function(e){var b=e.target.closest('[data-rev]');if(!b)return;var c=r.querySelector('.rev');var step=c?c.getBoundingClientRect().width+parseFloat(getComputedStyle(r).columnGap||0):r.clientWidth;r.scrollBy({left:step*+b.dataset.rev,behavior:'smooth'})})});

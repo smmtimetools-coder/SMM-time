@@ -469,14 +469,34 @@ body:has(.pop:not([hidden])) .tg-float{display:none}
   .svc-grid .tile:first-child{box-shadow:none}
   .svc-grid .tile:last-child{margin-bottom:0}
 }
-/* comparison: regular agency vs SMM TIME */
-.vs{margin-top:max(24px, calc(60 * var(--u)));border:2px solid var(--ink2);border-radius:20px;overflow:hidden;background:var(--paper)}
-.vs-row{display:grid;grid-template-columns:1fr 1fr}
-.vs-row+.vs-row{border-top:2px solid var(--ink2)}
-.vs-row p{padding:max(14px, calc(26 * var(--u))) max(16px, calc(36 * var(--u)));font-size:var(--f-small);line-height:1.4;color:#4d575d}
-.vs-row p+p{border-left:2px solid var(--ink2);color:var(--ink);font-weight:700}
-.vs-head p{font-weight:800;text-transform:uppercase;font-size:var(--f-body);color:var(--ink2)}
-.vs-head p+p{background:var(--accent)}
+/* comparison: regular agency vs SMM TIME — grey crossed-out column against a dark column with yellow checks */
+.vs{--g:max(14px, calc(28 * var(--u)));position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);column-gap:var(--g);margin-top:max(24px, calc(60 * var(--u)))}
+.vs-row{display:contents}
+.vs-row p{position:relative;display:flex;align-items:center;gap:max(10px, calc(18 * var(--u)));padding:max(14px, calc(24 * var(--u))) max(16px, calc(36 * var(--u)));font-size:var(--f-small);line-height:1.35}
+.vs-row p:first-child{background:#dddada;color:#7a8186}
+.vs-row p+p{background:var(--noise),var(--ink);background-attachment:fixed,scroll;color:var(--paper);font-weight:700;font-size:var(--f-body)}
+.vs-row:not(.vs-head) p:first-child{text-decoration:line-through;text-decoration-color:rgba(122,129,134,.55);text-decoration-thickness:2px}
+.vs-row:not(.vs-head) p::before{flex:none;display:grid;place-items:center;width:max(26px, calc(40 * var(--u)));aspect-ratio:1;border-radius:50%;font-weight:800;font-size:max(13px, calc(20 * var(--u)));text-decoration:none}
+.vs-row:not(.vs-head) p:first-child::before{content:"✕";border:2px solid #a3a9ad;color:#8b9196}
+.vs-row:not(.vs-head) p+p::before{content:"✓";background:var(--accent);color:var(--ink)}
+.vs-row+.vs-row:not(:nth-child(3)) p{border-top:1px solid rgba(18,34,45,.12)}
+.vs-row+.vs-row:not(:nth-child(3)) p+p{border-top-color:rgba(237,234,234,.12)}
+.vs-head p{font-weight:800;text-transform:uppercase;font-size:max(16px, calc(30 * var(--u)));padding-block:max(18px, calc(34 * var(--u)));border-radius:20px 20px 0 0}
+.vs-head p:first-child{color:#6f7477}
+.vs-head p+p{color:var(--accent)}
+.vs-row:last-child p{border-radius:0 0 20px 20px}
+.vs-badge{position:absolute;z-index:2;top:max(10px, calc(22 * var(--u)));left:calc((100% - var(--g)) / 2.25 + var(--g) / 2);transform:translateX(-50%);display:grid;place-items:center;width:max(46px, calc(76 * var(--u)));aspect-ratio:1;border-radius:50%;background:var(--accent);border:3px solid var(--bg);
+  font-weight:800;font-size:max(16px, calc(28 * var(--u)));text-transform:uppercase;color:var(--ink)}
+.js-reveal .vs-row:not(.vs-head) p+p{opacity:0;transform:translateX(-18px);transition:opacity .45s ease,transform .45s cubic-bezier(.2,.8,.2,1)}
+.js-reveal .vs-row p+p.in{opacity:1;transform:none}
+@media (hover:hover){.vs-row:not(.vs-head):hover p+p{background:var(--accent);color:var(--ink)}.vs-row:not(.vs-head):hover p+p::before{background:var(--ink);color:var(--accent)}}
+@media (max-width:760px){
+  .vs{grid-template-columns:1fr;row-gap:0}
+  .vs-badge,.vs-head{display:none}
+  .vs-row:not(.vs-head) p:first-child{border-radius:16px 16px 0 0;margin-top:12px;border-top:0!important}
+  .vs-row:not(.vs-head) p+p{border-radius:0 0 16px 16px;border-top:0!important}
+  .vs-row:nth-child(3) p:first-child{margin-top:0}
+}
 .who-grid--3{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media (max-width:760px){.who-grid--3{grid-template-columns:1fr}.vs-row p{padding:12px 14px}}
 /* «що ви отримуєте»: 3×2 cards, alternating dark/yellow, appear one by one on scroll */
@@ -493,3 +513,5 @@ body:has(.pop:not([hidden])) .tg-float{display:none}
 .js-reveal .gcard.in{opacity:1;transform:none}
 @media (max-width:1000px){.gain{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:760px){.gain{grid-template-columns:1fr}.gcard{min-height:0}.gcard-n{margin-bottom:0}}
+.m-br{display:none}
+@media (max-width:760px){.m-br{display:inline}}
