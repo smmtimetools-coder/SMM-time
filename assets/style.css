@@ -469,3 +469,13 @@ body:has(.pop:not([hidden])) .tg-float{display:none}
   .svc-grid .tile:first-child{box-shadow:none}
   .svc-grid .tile:last-child{margin-bottom:0}
 }
+/* comparison: regular agency vs SMM TIME */
+.vs{margin-top:max(24px, calc(60 * var(--u)));border:2px solid var(--ink2);border-radius:20px;overflow:hidden;background:var(--paper)}
+.vs-row{display:grid;grid-template-columns:1fr 1fr}
+.vs-row+.vs-row{border-top:2px solid var(--ink2)}
+.vs-row p{padding:max(14px, calc(26 * var(--u))) max(16px, calc(36 * var(--u)));font-size:var(--f-small);line-height:1.4;color:#4d575d}
+.vs-row p+p{border-left:2px solid var(--ink2);color:var(--ink);font-weight:700}
+.vs-head p{font-weight:800;text-transform:uppercase;font-size:var(--f-body);color:var(--ink2)}
+.vs-head p+p{background:var(--accent)}
+.who-grid--3{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:760px){.who-grid--3{grid-template-columns:1fr}.vs-row p{padding:12px 14px}}
