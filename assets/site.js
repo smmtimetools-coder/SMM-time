@@ -169,6 +169,11 @@
     ok.querySelector('.ok-back').addEventListener('click',function(){ok.hidden=true;form.hidden=false});
   }
   document.querySelectorAll('.lead-form').forEach(wire);
+  /* «що ви отримуєте»: cards fade in one by one as they enter the screen */
+  (function(){var g=document.querySelector('.gain');if(!g||!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+    g.classList.add('js-reveal');var cols=function(){return getComputedStyle(g).gridTemplateColumns.split(' ').length};
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var c=e.target,i=[].indexOf.call(g.children,c);c.style.setProperty('--d',i%cols());c.classList.add('in');io.unobserve(c)})},{threshold:.2});
+    [].forEach.call(g.children,function(c){io.observe(c)})})();
   /* stacking order for mobile sticky cards */
   ['.svc-grid'].forEach(function(sel){document.querySelectorAll(sel).forEach(function(g){[].forEach.call(g.children,function(c,i){c.style.setProperty('--i',i)})})});
   document.querySelectorAll('[data-reviews]').forEach(function(r){var nav=r.nextElementSibling;if(!nav)return;nav.addEventListener('click',function(e){var b=e.target.closest('[data-rev]');if(!b)return;var c=r.querySelector('.rev');var step=c?c.getBoundingClientRect().width+parseFloat(getComputedStyle(r).columnGap||0):r.clientWidth;r.scrollBy({left:step*+b.dataset.rev,behavior:'smooth'})})});
