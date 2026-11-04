@@ -479,3 +479,23 @@ body:has(.pop:not([hidden])) .tg-float{display:none}
 .vs-head p+p{background:var(--accent)}
 .who-grid--3{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media (max-width:760px){.who-grid--3{grid-template-columns:1fr}.vs-row p{padding:12px 14px}}
+/* «що ви отримуєте»: folders like the header — each has its own tab, they stack on scroll */
+.folders{--n:6;--ft:var(--strip);--r:max(9px, calc(18 * var(--u)));margin-top:max(24px, calc(60 * var(--u)))}
+.folder{position:sticky;top:max(12px, calc(24 * var(--u)));z-index:calc(var(--i) + 1);margin-bottom:28vh;padding-top:var(--ft)}
+.folder:last-child{margin-bottom:0}
+.folder-tab{position:absolute;top:0;height:var(--ft);left:calc(var(--i) * 100% / var(--n));width:calc(100% / var(--n) - var(--ft) * .5);display:flex;align-items:center;justify-content:center;
+  border-top-left-radius:var(--r);background:var(--noise),var(--ink);background-attachment:fixed,scroll;color:var(--accent);font-weight:800;font-size:var(--f-tab);font-variant-numeric:tabular-nums}
+.folder-tab::after{content:"";position:absolute;top:0;bottom:0;left:0;right:calc(var(--r) * -1);background:inherit;border-radius:var(--r) var(--r) 0 0;transform:skewX(20deg);transform-origin:0 0;z-index:-1}
+.folder-body{background:var(--noise),var(--ink);background-attachment:fixed,scroll;color:var(--paper);border-radius:0 20px 20px 20px;height:max(220px, calc(300 * var(--u)));box-sizing:border-box;
+  padding:max(22px, calc(48 * var(--u))) max(18px, calc(56 * var(--u)));display:flex;flex-direction:column;justify-content:center;gap:max(10px, calc(20 * var(--u)));box-shadow:0 -12px 28px -16px rgba(18,34,45,.5)}
+.folder:first-child .folder-body{box-shadow:none}
+.folder:not(:first-child) .folder-body{border-top-left-radius:20px}
+.folder-body h3{font-weight:800;text-transform:uppercase;font-size:max(22px, calc(48 * var(--u)));line-height:1.1;color:var(--accent)}
+.folder-body p{font-size:var(--f-body);line-height:1.4;max-width:900px}
+.folder-body strong{color:var(--accent);font-weight:800}
+.folder--y .folder-tab,.folder--y .folder-body{background:var(--accent);color:var(--ink)}
+.folder--y .folder-body h3,.folder--y .folder-body strong{color:var(--ink)}
+.folder:last-child .folder-tab{width:calc(100% / var(--n));border-top-right-radius:var(--r)}
+.folder:last-child .folder-tab::after{display:none}
+.folder:last-child .folder-body{border-top-right-radius:0}
+@media (max-width:760px){.folder{margin-bottom:22vh}.folder-body{height:270px}}
