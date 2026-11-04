@@ -515,6 +515,5 @@ body:has(.pop:not([hidden])) .tg-float{display:none}
 @media (max-width:760px){.gain{grid-template-columns:1fr}.gcard{min-height:0}.gcard-n{margin-bottom:0}}
 .m-br{display:none}
 @media (max-width:760px){.m-br{display:inline}}
-.tile--ai .ai-mascot{position:absolute;z-index:1;inset:auto;border-radius:0;right:max(14px, calc(48 * var(--u)));bottom:max(8px, calc(14 * var(--u)));height:54%;width:auto;max-width:42%;object-fit:contain;transform:rotate(4deg);transition:transform .3s cubic-bezier(.2,.8,.2,1);filter:drop-shadow(0 6px 14px rgba(0,0,0,.35))}
+.tile--ai .ai-mascot{position:absolute;z-index:1;inset:auto;border-radius:0;right:max(14px, calc(48 * var(--u)));bottom:max(8px, calc(14 * var(--u)));height:66%;width:auto;max-width:42%;object-fit:contain;transform:rotate(4deg);transition:transform .3s cubic-bezier(.2,.8,.2,1);filter:drop-shadow(0 6px 14px rgba(0,0,0,.35))}
 a.tile--ai:hover .ai-mascot{transform:rotate(-2deg) scale(1.05)}
-@media (max-width:480px){.tile--ai .ai-mascot{height:50%;right:10px;bottom:8px}.tile--ai .ai-list{max-width:56%}}
