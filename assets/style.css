@@ -479,3 +479,17 @@ body:has(.pop:not([hidden])) .tg-float{display:none}
 .vs-head p+p{background:var(--accent)}
 .who-grid--3{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media (max-width:760px){.who-grid--3{grid-template-columns:1fr}.vs-row p{padding:12px 14px}}
+/* «що ви отримуєте»: 3×2 cards, alternating dark/yellow, appear one by one on scroll */
+.gain{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:max(12px, calc(22 * var(--u)));margin-top:max(24px, calc(60 * var(--u)))}
+.gcard{position:relative;display:flex;flex-direction:column;gap:max(8px, calc(14 * var(--u)));border-radius:20px;padding:max(20px, calc(40 * var(--u))) max(18px, calc(36 * var(--u)));
+  background:var(--noise),var(--ink);background-attachment:fixed,scroll;color:var(--paper);min-height:max(220px, calc(330 * var(--u)))}
+.gcard-n{font-weight:800;font-size:max(40px, calc(84 * var(--u)));line-height:1;color:var(--accent);font-variant-numeric:tabular-nums;margin-bottom:auto;padding-bottom:max(12px, calc(26 * var(--u)))}
+.gcard h3{font-weight:800;text-transform:uppercase;font-size:var(--f-body);line-height:1.2;color:var(--accent)}
+.gcard p{font-size:var(--f-small);line-height:1.45}
+.gcard strong{font-weight:800;color:var(--accent)}
+.gcard--y{background:var(--accent);color:var(--ink)}
+.gcard--y .gcard-n,.gcard--y h3,.gcard--y strong{color:var(--ink)}
+.js-reveal .gcard{opacity:0;transform:translateY(28px);transition:opacity .5s ease,transform .5s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--d, 0) * 90ms)}
+.js-reveal .gcard.in{opacity:1;transform:none}
+@media (max-width:1000px){.gain{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:760px){.gain{grid-template-columns:1fr}.gcard{min-height:0}.gcard-n{margin-bottom:0}}
