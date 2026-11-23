@@ -1,9 +1,9 @@
 (function(){
   var T0=Date.now();
   var ROOT=document.documentElement.getAttribute("data-root")||"";
-  var ROUTES={"home": "", "services": "poslugy/", "smm": "poslugy/kompleksnyi-smm/", "target": "poslugy/tarhetovana-reklama/", "mascot": "poslugy/brend-maskot/", "audit": "poslugy/smm-audyt/", "education": "poslugy/navchannia-ta-konsultatsii/", "expertise": "poslugy/rozpakuvannia-ekspertnosti/", "cases": "kejsy/", "okpsy": "kejsy/okpsy-pharma/", "dyvys": "kejsy/dyvys-ukrainske/", "minka": "kejsy/minka-beauty/", "evi": "kejsy/evi/", "karabas": "kejsy/karabas/", "opera": "kejsy/kyivska-opera/", "philharmonic": "kejsy/natsionalna-filarmoniia/", "khpi": "kejsy/khpi/", "dnipro": "kejsy/dnipro-biudzhet-uchasti/", "toys": "kejsy/insta-mahazyn-ihrashok/", "telelikar": "kejsy/telelikar/", "cheese": "kejsy/syrni-tsukerky/", "mascots": "kejsy/maskoty-minka-okpsy/", "badik": "kejsy/maskot-badyk/", "symphony": "kejsy/symphony-rock-suknia/", "contacts": "kontakty/"};
+  var ROUTES={"home": "", "services": "poslugy/", "smm": "poslugy/kompleksnyi-smm/", "target": "poslugy/tarhetovana-reklama/", "mascot": "poslugy/brend-maskot/", "audit": "poslugy/smm-audyt/", "education": "poslugy/navchannia-ta-konsultatsii/", "expertise": "poslugy/rozpakuvannia-ekspertnosti/", "team": "poslugy/ai-smm-komanda/", "cases": "kejsy/", "okpsy": "kejsy/okpsy-pharma/", "dyvys": "kejsy/dyvys-ukrainske/", "minka": "kejsy/minka-beauty/", "evi": "kejsy/evi/", "karabas": "kejsy/karabas/", "opera": "kejsy/kyivska-opera/", "philharmonic": "kejsy/natsionalna-filarmoniia/", "khpi": "kejsy/khpi/", "dnipro": "kejsy/dnipro-biudzhet-uchasti/", "toys": "kejsy/insta-mahazyn-ihrashok/", "telelikar": "kejsy/telelikar/", "cheese": "kejsy/syrni-tsukerky/", "mascots": "kejsy/maskoty-minka-okpsy/", "badik": "kejsy/maskot-badyk/", "symphony": "kejsy/symphony-rock-suknia/", "contacts": "kontakty/"};
   function url(id){return (ROOT+(ROUTES[id]||""))||"./"}
-  var SECTION={home:"home",services:"services",smm:"services",target:"services",mascot:"services",audit:"services",education:"services",expertise:"services",
+  var SECTION={home:"home",services:"services",smm:"services",target:"services",mascot:"services",audit:"services",education:"services",expertise:"services",team:"services",
     cases:"cases",okpsy:"cases",dyvys:"cases",minka:"cases",evi:"cases",karabas:"cases",opera:"cases",philharmonic:"cases",khpi:"cases",dnipro:"cases",toys:"cases",telelikar:"cases",cheese:"cases",mascots:"cases",badik:"cases",symphony:"cases",contacts:"contacts"};
   var ARROW='<path d="M130.3 11.3C130.3 11.3 130.3 11.4 117.5 11.4C104.6 11.4 78.9 11.3 58.9 11.2C39 11.1 25.6 10.9 18.2 10.7C10.8 10.5 9.8 10.3 9.6 9.7C9 7.7 11.4 6.3 15.1 5.3M15.1 5.3C20.3 4 28.1 3.5 34.9 2.9M15.1 5.3C21.6 4.5 29.2 3.6 34.9 2.9M15.1 5.3C8.8 6.2 3.4 7.1 2 7.6C5.1 9.4 19.5 15.9 42.4 25C46.1 26.4 47 26.9 49.8 29.4M34.9 2.9C37.7 2.7 40.3 2.5 42.4 2.2C46.1 1.7 41.9 2.1 34.9 2.9Z" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>';
 
@@ -64,9 +64,12 @@
     function mascotTile(){
       return '<a class="tile tile--ai" href="'+url('mascot')+'"><span class="ai-bg"></span><img class="ai-mascot" src="'+ROOT+'img/mascot_lesia.webp?v=2" alt="" aria-hidden="true"><span class="ai-list" aria-hidden="true">концепт · пози · емоції · анімація</span><svg class="frame" aria-hidden="true"><path/></svg><span class="lbl">AI-персонажі (маскот)<span class="soon">нове</span></span></a>';
     }
+    function teamTile(){
+      return '<a class="tile tile--wide tile--ai tile--team" href="'+url('team')+'"><span class="ai-bg"></span><span class="team-chips" aria-hidden="true"><i>стратег</i><i>маркетолог</i><i>копірайтер</i><i>дизайнер</i></span><span class="ai-list" aria-hidden="true">команда в одному Claude, налаштована під вас</span><svg class="frame" aria-hidden="true"><path/></svg><span class="lbl">своя AI SMM-команда<span class="soon">нове</span></span></a>';
+    }
     return '<div class="svc-grid">'+tile('smm','svcp_smm','комплексний smm з AI',false,'50% 62%')+tile('target','svcp_target','таргетована реклама з AI',false,'50% 45%')+
       mascotTile()+tile('audit','svcp_audit','AI-аудит соцмереж',false,'50% 48%')+
-      tile('education','svcp_edu','навчання: AI для SMM-команди',false,'50% 55%')+tile('expertise','svcp_expert','розпакування експертності з AI',false,'50% 30%')+'</div>';
+      tile('education','svcp_edu','навчання: AI для SMM-команди',false,'50% 55%')+tile('expertise','svcp_expert','розпакування експертності з AI',false,'50% 30%')+teamTile()+'</div>';
   }
 
 
@@ -87,7 +90,7 @@
     p.querySelectorAll('[data-services]').forEach(function(n){n.innerHTML=services()});
   });
   /* breadcrumbs: Головна / Розділ / Сторінка — at the bottom of the hero card, plus schema.org markup for Google */
-  var CRUMB={home:['Головна'],services:['Послуги','home'],smm:['Комплексний SMM з AI','services'],target:['Таргетована реклама','services'],mascot:['Бренд-маскот','services'],
+  var CRUMB={home:['Головна'],services:['Послуги','home'],smm:['Комплексний SMM з AI','services'],target:['Таргетована реклама','services'],mascot:['Бренд-маскот','services'],team:['Своя AI SMM-команда','services'],
     ai:['AI-контент','services'],audit:['SMM-аудит','services'],education:['Навчання та консультації','services'],expertise:['Розпакування експертності','services'],
     cases:['Кейси','home'],okpsy:['OKPsy Pharma','cases'],dyvys:['«Дивись Українське»','cases'],minka:['MINKA.BEAUTY','cases'],evi:['EVI','cases'],karabas:['Karabas.com','cases'],opera:['Київська опера','cases'],philharmonic:['Національна філармонія','cases'],khpi:['ХПІ','cases'],dnipro:['Дніпровська міська рада','cases'],toys:['Інста-магазин іграшок','cases'],telelikar:['Телелікар','cases'],cheese:['Сирні цукерки','cases'],mascots:['Розробка маскотів','cases'],badik:['Маскот Бадик','cases'],symphony:['Symphony ROCK і «СУКНЯ»','cases'],
     contacts:['Контакти','home']};
@@ -178,6 +181,10 @@
   (function(){var v=document.querySelector('.vs');if(!v||!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
     v.classList.add('js-reveal');var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.4});
     v.querySelectorAll('.vs-row:not(.vs-head) p+p').forEach(function(p){io.observe(p)})})();
+  /* FAQ accordion: one answer open at a time, smooth close */
+  document.querySelectorAll('.faq').forEach(function(f){f.addEventListener('click',function(e){var s=e.target.closest('summary');if(!s)return;var d=s.parentNode;
+    if(d.open){e.preventDefault();d.classList.add('closing');d.querySelector('.qa-a').style.gridTemplateRows='0fr';setTimeout(function(){d.open=false;d.classList.remove('closing');d.querySelector('.qa-a').style.gridTemplateRows=''},300);return}
+    e.preventDefault();f.querySelectorAll('details[open]').forEach(function(o){if(o!==d)o.open=false});var a=d.querySelector('.qa-a');a.style.gridTemplateRows='0fr';d.open=true;requestAnimationFrame(function(){requestAnimationFrame(function(){a.style.gridTemplateRows=''})})})});
   /* stacking order for mobile sticky cards */
   ['.svc-grid'].forEach(function(sel){document.querySelectorAll(sel).forEach(function(g){[].forEach.call(g.children,function(c,i){c.style.setProperty('--i',i)})})});
   document.querySelectorAll('[data-reviews]').forEach(function(r){var nav=r.nextElementSibling;if(!nav)return;nav.addEventListener('click',function(e){var b=e.target.closest('[data-rev]');if(!b)return;var c=r.querySelector('.rev');var step=c?c.getBoundingClientRect().width+parseFloat(getComputedStyle(r).columnGap||0):r.clientWidth;r.scrollBy({left:step*+b.dataset.rev,behavior:'smooth'})})});
