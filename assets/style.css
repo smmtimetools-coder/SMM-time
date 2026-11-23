@@ -606,3 +606,4 @@ a.tile--team:hover .team-chips i{background:var(--accent);color:var(--ink)}
 .team-alt a{color:var(--accent);font-weight:700;text-decoration:underline;text-underline-offset:3px}
 @media (max-width:1000px){.fit{grid-template-columns:1fr}}
 @media (max-width:760px){.pain-list{grid-template-columns:1fr}}
+.team-mid{display:flex;justify-content:center;margin-top:max(20px, calc(44 * var(--u)))}.team-mid .btn{text-transform:none;font-size:max(16px, calc(30 * var(--u)));padding:.55em 1.1em}
