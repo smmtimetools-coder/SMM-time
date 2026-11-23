@@ -574,3 +574,35 @@ a.tile--team:hover .team-chips i{background:var(--accent);color:var(--ink)}
 .team-buy .btn{text-transform:none}
 @media (max-width:760px){.team-gets{grid-template-columns:1fr}}
 .role--incl p{color:var(--ink)}
+.role-q{font-weight:800;color:var(--ink)!important}
+.pain{margin-top:max(30px, calc(70 * var(--u)));padding:max(22px, calc(56 * var(--u))) max(18px, calc(56 * var(--u)));border-radius:24px;background:var(--noise),var(--ink);color:var(--paper)}
+.pain h2{font-weight:800;text-transform:uppercase;font-size:max(24px, calc(56 * var(--u)));line-height:1.1;color:var(--accent);max-width:900px}
+.pain > p{margin-top:max(14px, calc(26 * var(--u)));font-size:var(--f-body);line-height:1.45;max-width:1000px}
+.pain .pain-sub{font-weight:800;text-transform:uppercase;color:var(--accent);font-size:var(--f-small);letter-spacing:.06em;margin-top:max(22px, calc(44 * var(--u)))}
+.pain-list{list-style:none;padding:0;margin-top:max(10px, calc(18 * var(--u)));display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 max(18px, calc(40 * var(--u)))}
+.pain-list li{position:relative;padding:max(10px, calc(16 * var(--u))) 0 max(10px, calc(16 * var(--u))) max(30px, calc(44 * var(--u)));border-bottom:1px solid rgba(237,234,234,.14);font-size:var(--f-small);line-height:1.45}
+.pain-list li::before{content:"";position:absolute;left:0;top:max(13px, calc(21 * var(--u)));width:max(16px, calc(22 * var(--u)));aspect-ratio:1;border:2px solid var(--accent);border-radius:5px}
+.pain .pain-end{margin-top:max(22px, calc(44 * var(--u)));padding:max(14px, calc(24 * var(--u))) max(16px, calc(30 * var(--u)));border-radius:16px;background:var(--accent);color:var(--ink);font-weight:800;max-width:none}
+.fit-h{font-weight:800;text-transform:uppercase;font-size:var(--f-body);margin-top:max(14px, calc(30 * var(--u)))}
+.fit{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:max(10px, calc(18 * var(--u)));margin-top:max(12px, calc(24 * var(--u)))}
+.fit-card{border:2px solid var(--ink2);border-radius:18px;padding:max(16px, calc(30 * var(--u)));background:var(--paper)}
+.fit-card h4{font-weight:800;text-transform:uppercase;font-size:var(--f-body);line-height:1.2}
+.fit-n{margin-top:6px;font-size:max(13px, calc(20 * var(--u)));color:#6f7477;line-height:1.35}
+.fit-card ul{list-style:none;padding:0;margin-top:max(12px, calc(20 * var(--u)));display:flex;flex-direction:column;gap:max(8px, calc(14 * var(--u)))}
+.fit-card li{position:relative;padding-left:1.6em;font-size:var(--f-small);line-height:1.4}
+.fit-card li::before{content:"✓";position:absolute;left:0;top:0;font-weight:800;color:var(--accent)}
+.fit-card--both{background:var(--accent);border-color:var(--accent)}
+.fit-card--both li::before{color:var(--ink)}
+.nofit{margin-top:max(12px, calc(24 * var(--u)));border-radius:18px;padding:max(16px, calc(30 * var(--u)));background:#dddada;color:#4d575d}
+.nofit h3{font-weight:800;text-transform:uppercase;font-size:var(--f-body);color:#5d6468}
+.nofit ul{list-style:none;padding:0;margin-top:12px;display:flex;flex-direction:column;gap:10px}
+.nofit li{position:relative;padding-left:1.6em;font-size:var(--f-small);line-height:1.45}
+.nofit li::before{content:"✕";position:absolute;left:0;top:0;font-weight:800;color:#8b9196}
+.nofit a{color:var(--ink);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.delegate{margin-top:max(30px, calc(80 * var(--u)));padding:max(22px, calc(56 * var(--u))) max(18px, calc(56 * var(--u)));border-radius:24px;background:var(--accent);color:var(--ink)}
+.delegate h2{font-weight:800;text-transform:uppercase;font-size:max(22px, calc(48 * var(--u)));line-height:1.12;max-width:1000px}
+.delegate p{margin-top:max(14px, calc(26 * var(--u)));font-size:var(--f-body);line-height:1.5;max-width:1050px}
+.team-alt{margin-top:6px;font-size:var(--f-small);color:rgba(237,234,234,.85)}
+.team-alt a{color:var(--accent);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+@media (max-width:1000px){.fit{grid-template-columns:1fr}}
+@media (max-width:760px){.pain-list{grid-template-columns:1fr}}
